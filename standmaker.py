@@ -287,7 +287,7 @@ class StandMaker(tk.Tk):
         # Draw polygon
         poly = et.SubElement(
                 et.getroot(svg),
-                'polygon'
+                'polygon',
                 attrib={'points':
                     ' '.join(map(lambda p: f'{p[0]},{p[1]}'))
                 }
