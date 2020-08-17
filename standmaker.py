@@ -270,7 +270,7 @@ class StandMaker(tk.Tk):
                 'development': radians(120)
         }
         stat_marks = {
-                stat: getattr(self.stat_form, stat).value
+                stat: getattr(self.stats_form, stat).value
                 for stat in stat_angles
         }
         points = [
