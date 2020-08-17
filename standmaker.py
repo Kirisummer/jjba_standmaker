@@ -87,7 +87,7 @@ class StatEntry(tk.Frame):
 
     @property
     def value(self):
-        return Stat(self.var.get())
+        return Stat(self.option_var.get())
 
     def set_stat_name(self, stat_name):
         self.label.config(text=stat_name)
@@ -286,10 +286,10 @@ class StandMaker(tk.Tk):
 
         # Draw polygon
         poly = et.SubElement(
-                et.getroot(svg),
+                svg.getroot(),
                 'polygon',
                 attrib={'points':
-                    ' '.join(map(lambda p: f'{p[0]},{p[1]}'))
+                    ' '.join(map(lambda p: f'{p[0]},{p[1]}', points))
                 }
         )
 
