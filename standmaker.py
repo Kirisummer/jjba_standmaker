@@ -337,8 +337,9 @@ class StandMaker(tk.Tk):
         svg = et.parse('base.svg')
 
         # Draw polygon
+        poly_group = svg.find('.//*[@id="polygon"]')
         poly = et.SubElement(
-                svg.getroot(),
+                poly_group,
                 'polygon',
                 attrib={
                     'points': ' '.join(map(lambda p: f'{p[0]},{p[1]}', points)),
