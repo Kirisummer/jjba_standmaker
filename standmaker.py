@@ -1,3 +1,5 @@
+#TODO: add polygon opacity option
+
 import enum
 from math import cos, sin, radians
 
@@ -15,7 +17,6 @@ class ColorEntry(tk.Frame):
         super().__init__(parent)
         self.label = tk.Label(self, text=label)
         self.entry_var = tk.StringVar()
-        self.entry_var.set(default)
         self.entry = tk.Entry(
                 self,
                 textvariable=self.entry_var,
@@ -26,8 +27,8 @@ class ColorEntry(tk.Frame):
                 width=self.CANVAS_SIZE,
                 height=self.CANVAS_SIZE
         )
-        self.update_canvas()
         self.entry_var.trace('w', self.update_canvas)
+        self.entry_var.set(default)
 
         self.label.pack(side=tk.LEFT)
         self.canvas.pack(side=tk.RIGHT)
@@ -41,19 +42,67 @@ class ColorEntry(tk.Frame):
                     fill=self.entry_var.get()
             )
             self.entry.config(fg='black')
+            self.valid = True
         except tk.TclError as e:
-            if 'unknown color name' in str(e):
+            self.valid = False
+            if 'unknown color name' in str(e) or 'invalid color name' in str(e):
                 self.entry.config(fg='red')
             else:
                 raise e
+
     def set_label(self, label):
         self.label.config(text=label)
-
 
     @property
     def color(self):
         return self.entry.get()
 
+
+class NumberSlider(tk.Frame):
+    valid = None
+
+    def __init__(self, parent, label, default, min_value, max_value, step):
+        super().__init__(parent)
+        self.min_value = min_value
+        self.max_value = max_value
+        self.label = tk.Label(self, text=label)
+        self.var = tk.StringVar()
+        self.var.set(str(default))
+        self.slider = tk.Scale(
+                self,
+                from_=min_value, to=max_value,
+                resolution=step,
+                orient=tk.HORIZONTAL,
+                variable=self.var,
+                showvalue=False
+        )
+        self.entry = tk.Entry(
+                self,
+                textvariable=self.var,
+                width=4
+        )
+        self.var.trace('w', self.validate_entry)
+
+        self.label.pack(side=tk.LEFT)
+        self.entry.pack(side=tk.RIGHT)
+        self.slider.pack(side=tk.RIGHT)
+
+    def validate_entry(self, *args):
+        self.entry.delete(4, tk.END)
+        if not self.var.get():
+            self.var.set('0')
+        val = float(self.var.get())
+        if self.min_value > val:
+            self.var.set(str(self.min_value))
+        elif self.max_value < val:
+            self.var.set(str(self.max_value))
+
+    def set_label(self, label):
+        self.label.config(text=label)
+
+    @property
+    def value(self):
+        return self.var.get()
 
 class Stat(enum.Enum):
     A = 'A'
@@ -139,15 +188,18 @@ class AppearanceForm(tk.LabelFrame):
         self.contour = ColorEntry(self, translation['appearance_contour'], 'black')
         self.poly_fill = ColorEntry(self, translation['appearance_poly_fill'], 'magenta')
         self.poly_stroke = ColorEntry(self, translation['appearance_poly_stroke'], 'indigo')
+        self.poly_opacity = NumberSlider(self, translation['appearance_poly_opacity'], 0.5, 0, 1, 0.01)
         self.contour.pack(fill='x', expand=True)
         self.poly_fill.pack(fill='x', expand=True)
         self.poly_stroke.pack(fill='x', expand=True)
+        self.poly_opacity.pack(fill='x', expand=True)
 
     def translate(self, translation):
         self.config(text=translation['appearance_label'])
         self.contour.set_label(translation['appearance_contour'])
         self.poly_fill.set_label(translation['appearance_poly_fill'])
         self.poly_stroke.set_label(translation['appearance_poly_stroke'])
+        self.poly_opacity.set_label(translation['appearance_poly_opacity'])
 
 
 class StatsForm(tk.LabelFrame):
@@ -267,7 +319,7 @@ class StandMaker(tk.Tk):
                 'range': radians(330),
                 'persistence': radians(270),
                 'precision': radians(210),
-                'development': radians(120)
+                'development': radians(150)
         }
         stat_marks = {
                 stat: getattr(self.stats_form, stat).value
@@ -288,14 +340,19 @@ class StandMaker(tk.Tk):
         poly = et.SubElement(
                 svg.getroot(),
                 'polygon',
-                attrib={'points':
-                    ' '.join(map(lambda p: f'{p[0]},{p[1]}', points))
+                attrib={
+                    'points': ' '.join(map(lambda p: f'{p[0]},{p[1]}', points)),
+                    'fill': self.appearance_form.poly_fill.color,
+                    'stroke': self.appearance_form.poly_stroke.color,
+                    'opacity': self.appearance_form.poly_opacity.value
                 }
         )
 
+        # Replace contour color
+        svg.find('.//*[@id="line_color"]').getchildren()[0].attrib['stop-color'] = self.appearance_form.contour.color
+
         # Write svg
         svg.write(filename, pretty_print=True)
-
 
 
 app = StandMaker()
