@@ -1,5 +1,3 @@
-# TODO: add polygon opacity option
-
 from math import cos, sin, radians
 
 import json
