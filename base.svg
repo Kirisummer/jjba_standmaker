@@ -1,19 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-1 -1 130 130">
-	<defs>
-		<linearGradient id="line_color">
-			<stop stop-color="black"/>
-		</linearGradient>
-	</defs>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-1 -1 130 130">
+	<linearGradient id="line_color" gradientUnits="userSpaceOnUse">
+		<stop stop-color="black" offset="0"/>
+	</linearGradient>
 	<g id="polygon">
 	</g>
-	<g id="base">
-		<g id="frame">
-			<defs>
-				<line id="frame_dash" x1="64" x2="64" y1="0" y2="4" stroke="url(#line_color)" stroke-width="2"/>
-			</defs>
-			<circle id="frame_outer" cx="64" cy="64" r="64" fill="none" stroke="url(#line_color)" stroke-width="0.75"/>
-			<circle id="frame_inner" cx="64" cy="64" r="60" fill="none" stroke="url(#line_color)" stroke-width="0.75"/>
-			<use xlink:href="#frame_dash"/>
+	<g id="base" stroke="url(#line_color)">
+		<g id="frame" fill="none">
+			<circle id="frame_outer" cx="64" cy="64" r="64" stroke-width="0.75"/>
+			<circle id="frame_inner" cx="64" cy="64" r="60" stroke-width="0.75"/>
+			<line id="frame_dash" x1="64" x2="64" y1="0" y2="4" stroke-width="2"/>
 			<use xlink:href="#frame_dash" transform="rotate(16.363636363636363,64,64)"/>
 			<use xlink:href="#frame_dash" transform="rotate(32.72727272727273,64,64)"/>
 			<use xlink:href="#frame_dash" transform="rotate(49.09090909090909,64,64)"/>
@@ -37,42 +32,42 @@
 			<use xlink:href="#frame_dash" transform="rotate(343.6363636363636,64,64)"/>
 		</g>
 		<g id="stats">
-			<circle id="stat_circle" cx="64" cy="64" r="42" fill="none" stroke="url(#line_color)" stroke-width="0.5"/>
+			<circle id="stat_circle" cx="64" cy="64" r="42" fill="none" stroke-width="0.5"/>
 			<g id="stat_lines">
 				<defs>
-					<g id="stat_line">
-						<line x1="64" y1="106" x2="64" y2="22" stroke="url(#line_color)" stroke-width="0.4"/>
-						<line x1="64" x2="64" y1="28.5" y2="29.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="35.5" y2="36.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="42.5" y2="43.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="49.5" y2="50.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="56.5" y2="57.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="70.5" y2="71.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="77.5" y2="78.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="84.5" y2="85.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="91.5" y2="92.5" stroke="url(#line_color)" stroke-width="3"/>
-						<line x1="64" x2="64" y1="98.5" y2="99.5" stroke="url(#line_color)" stroke-width="3"/>
+					<g id="stat_line" stroke-width="3">
+						<line x1="64" y1="106" x2="64" y2="22" stroke-width="0.4"/>
+						<line x1="64" x2="64" y1="28.5" y2="29.5"/>
+						<line x1="64" x2="64" y1="35.5" y2="36.5"/>
+						<line x1="64" x2="64" y1="42.5" y2="43.5"/>
+						<line x1="64" x2="64" y1="49.5" y2="50.5"/>
+						<line x1="64" x2="64" y1="56.5" y2="57.5"/>
+						<line x1="64" x2="64" y1="70.5" y2="71.5"/>
+						<line x1="64" x2="64" y1="77.5" y2="78.5"/>
+						<line x1="64" x2="64" y1="84.5" y2="85.5"/>
+						<line x1="64" x2="64" y1="91.5" y2="92.5"/>
+						<line x1="64" x2="64" y1="98.5" y2="99.5"/>
 					</g>
 				</defs>
 				<use xlink:href="#stat_line"/>
 				<use xlink:href="#stat_line" transform="rotate(60,64,64)"/>
 				<use xlink:href="#stat_line" transform="rotate(-60,64,64)"/>
 			</g>
-			<g id="stat_text">
-				<g id="stat_letters">
-					<text x="66" y="28" fill="url(#line_color)" font-size="6">A</text>
-					<text x="66" y="35" fill="url(#line_color)" font-size="6">B</text>
-					<text x="66" y="42" fill="url(#line_color)" font-size="6">C</text>
-					<text x="66" y="49" fill="url(#line_color)" font-size="6">D</text>
-					<text x="66" y="56" fill="url(#line_color)" font-size="6">E</text>
+			<g id="stat_text" stroke="none" font-family="sans-serif" fill="url(#line_color)">
+				<g id="stat_letters" font-size="6">
+					<text x="66" y="28">A</text>
+					<text x="66" y="35">B</text>
+					<text x="66" y="42">C</text>
+					<text x="66" y="49">D</text>
+					<text x="66" y="56">E</text>
 				</g>
-				<g id="stat_description">
-					<text x="55" y="11" fill="url(#line_color)" font-size="8">PWR</text>
-					<text x="55" y="11" fill="url(#line_color)" font-size="8" transform="rotate(60,64,64)">SPD</text>
-					<text x="55" y="11" fill="url(#line_color)" font-size="8" transform="rotate(120,64,64)">RNG</text>
-					<text x="55" y="11" fill="url(#line_color)" font-size="8" transform="rotate(180,64,64)">PER</text>
-					<text x="55" y="11" fill="url(#line_color)" font-size="8" transform="rotate(240,64,64)">PRC</text>
-					<text x="55" y="11" fill="url(#line_color)" font-size="8" transform="rotate(300,64,64)">DEV</text>
+				<g id="stat_description" font-size="8" x="55" y="11">
+					<text x="55" y="11">PWR</text>
+					<text x="55" y="11" transform="rotate(60,64,64)">SPD</text>
+					<text x="55" y="11" transform="rotate(120,64,64)">RNG</text>
+					<text x="55" y="11" transform="rotate(180,64,64)">PER</text>
+					<text x="55" y="11" transform="rotate(240,64,64)">PRC</text>
+					<text x="55" y="11" transform="rotate(300,64,64)">DEV</text>
 				</g>
 			</g>
 		</g>
