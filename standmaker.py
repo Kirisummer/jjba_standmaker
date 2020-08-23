@@ -297,12 +297,10 @@ class StandMaker(tk.Tk):
         self.appearance_form.pack(fill='both', expand=True)
         self.save_form.pack(fill='both', expand=True)
 
-
     def load_translations(self, filename):
-        with open(filename) as f:
+        with open(filename, encoding='utf-8') as f:
             self.translations = json.load(f)
 
-    
     def translate_app(self, lang):
         translation = self.translations[lang]
         self.title(translation['window_title'])
