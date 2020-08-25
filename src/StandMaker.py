@@ -16,7 +16,7 @@ class StandMaker(tk.Tk):
         self.resizable(False, False)
     
         # TODO: default translation is the first one supplied?
-        with open('translations.json', encoding='utf-8') as f:
+        with open('data/translations.json', encoding='utf-8') as f:
             self.translations = json.load(f)
         language = next(iter(self.translations))
         
@@ -62,7 +62,7 @@ class StandMaker(tk.Tk):
         ]
 
         # Import base.svg
-        svg = et.parse('base.svg')
+        svg = et.parse('data/base.svg')
 
         # Draw polygon
         poly_group = svg.find('.//*[@id="polygon"]')

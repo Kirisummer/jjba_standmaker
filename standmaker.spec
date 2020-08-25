@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['standmaker.py'],
+a = Analysis(['src/Main.py'],
              pathex=['/home/lyra/programming/python/jjba'],
              binaries=[],
-             datas=[('translations.json', 'translations.json'), ('base.svg', 'base.svg')],
+             datas=[('data/translations.json', 'data/translations.json'), ('data/base.svg', 'data/base.svg')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=False)
