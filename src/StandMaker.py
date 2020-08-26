@@ -20,12 +20,17 @@ class StandMaker(tk.Tk):
         with open(os.path.join('data', 'translations.json'), encoding='utf-8') as f:
             self.translations = json.load(f)
         language = next(iter(self.translations))
+        
         self.title(self.translations[language]['window_title'])
         
         self.appearance_form = AppearanceForm(self, self.translations[language])
         self.stats_form = StatsForm(self, self.translations[language])
         self.language_form = LanguageForm(self, self.translations, language)
         self.save_form = SaveForm(self, self.translations[language])
+
+        self.appearance_form.contour.add_observer(self.save_form.save_button)
+        self.appearance_form.poly_fill.add_observer(self.save_form.save_button)
+        self.appearance_form.poly_stroke.add_observer(self.save_form.save_button)
         
         self.stats_form.pack(side=tk.LEFT)
         self.language_form.pack(fill='both', expand=True)

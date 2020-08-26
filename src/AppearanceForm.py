@@ -11,9 +11,11 @@ class AppearanceForm(tk.LabelFrame):
 
     def __init__(self, parent, translation):
         super().__init__(parent, text=translation['appearance_label'])
+        
         self.contour = ColorEntry(self, translation['appearance_contour'], 'black')
         self.poly_fill = ColorEntry(self, translation['appearance_poly_fill'], 'magenta')
         self.poly_stroke = ColorEntry(self, translation['appearance_poly_stroke'], 'indigo')
+        
         self.poly_opacity = NumberSlider(self, translation['appearance_poly_opacity'], 0.5, 0, 1, 0.01)
         self.contour.pack(fill='x', expand=True)
         self.poly_fill.pack(fill='x', expand=True)
