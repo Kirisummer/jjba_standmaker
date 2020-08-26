@@ -1,32 +1,32 @@
+import os
 from math import cos, sin, radians
 
 import json
 import tkinter as tk
 import lxml.etree as et
 
-from AppearanceForm import AppearanceForm
-from LanguageForm import LanguageForm
-from SaveForm import SaveForm
-from StatsForm import StatsForm
+from src.AppearanceForm import AppearanceForm
+from src.LanguageForm import LanguageForm
+from src.SaveForm import SaveForm
+from src.StatsForm import StatsForm
 
 
 class StandMaker(tk.Tk):
     def __init__(self):
         super().__init__()
         self.resizable(False, False)
-    
+        
         # TODO: default translation is the first one supplied?
-        with open('data/translations.json', encoding='utf-8') as f:
+        with open(os.path.join('data', 'translations.json'), encoding='utf-8') as f:
             self.translations = json.load(f)
         language = next(iter(self.translations))
-        
         self.title(self.translations[language]['window_title'])
-    
+        
         self.appearance_form = AppearanceForm(self, self.translations[language])
         self.stats_form = StatsForm(self, self.translations[language])
         self.language_form = LanguageForm(self, self.translations, language)
         self.save_form = SaveForm(self, self.translations[language])
-    
+        
         self.stats_form.pack(side=tk.LEFT)
         self.language_form.pack(fill='both', expand=True)
         self.appearance_form.pack(fill='both', expand=True)
@@ -60,10 +60,10 @@ class StandMaker(tk.Tk):
                 )
                 for stat, mark in stat_marks.items()
         ]
-
+        
         # Import base.svg
-        svg = et.parse('data/base.svg')
-
+        svg = et.parse(os.path.join('data', 'base.svg'))
+        
         # Draw polygon
         poly_group = svg.find('.//*[@id="polygon"]')
         poly = et.SubElement(
@@ -76,8 +76,8 @@ class StandMaker(tk.Tk):
                     'opacity': self.appearance_form.poly_opacity.value
                 }
         )
-
+        
         # Replace contour color
         svg.find('.//*[@id="line_color"]').getchildren()[0].attrib['stop-color'] = self.appearance_form.contour.color
-
+        
         svg.write(filename, pretty_print=True)
