@@ -5,10 +5,10 @@ import json
 import tkinter as tk
 import lxml.etree as et
 
-from src.AppearanceForm import AppearanceForm
-from src.LanguageForm import LanguageForm
-from src.SaveForm import SaveForm
-from src.StatsForm import StatsForm
+from AppearanceForm import AppearanceForm
+from LanguageForm import LanguageForm
+from SaveForm import SaveForm
+from StatsForm import StatsForm
 
 
 class StandMaker(tk.Tk):

@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from src.Stat import Stat
-from src.StatEntry import StatEntry
+from Stat import Stat
+from StatEntry import StatEntry
 
 
 class StatsForm(tk.LabelFrame):

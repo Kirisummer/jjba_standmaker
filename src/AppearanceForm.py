@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from src.ColorEntry import ColorEntry
-from src.NumberSlider import NumberSlider
+from ColorEntry import ColorEntry
+from NumberSlider import NumberSlider
 
 
 class AppearanceForm(tk.LabelFrame):

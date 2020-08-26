@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from src.BrowseButton import BrowseButton
-from src.SaveButton import SaveButton
+from BrowseButton import BrowseButton
+from SaveButton import SaveButton
 
 
 class SaveForm(tk.LabelFrame):

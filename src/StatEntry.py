@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from src.Stat import Stat
+from Stat import Stat
 
 
 class StatEntry(tk.Frame):

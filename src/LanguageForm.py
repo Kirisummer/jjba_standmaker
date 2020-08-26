@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from src.LanguageButton import LanguageButton
+from LanguageButton import LanguageButton
 
 
 class LanguageForm(tk.LabelFrame):
