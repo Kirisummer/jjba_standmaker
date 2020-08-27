@@ -1,11 +1,12 @@
 import tkinter as tk
+from tkinter.filedialog import asksaveasfilename
 
 
 class SaveButton(tk.Button):
     def __init__(self, parent, **options):
         super().__init__(
                 parent,
-                command=lambda: parent.master.save_to_file(parent.entry_var.get()),
+                command=self.save_as,
                 **options
         )
         self.notifiers = dict()
@@ -21,3 +22,12 @@ class SaveButton(tk.Button):
             self['state'] = 'active'
         else:
             self['state'] = 'disabled'
+
+    def save_as(self):
+        extensions = (('SVG image', '*.svg'), ('All files', '*.*'))
+        filename = asksaveasfilename(
+                master=self.master,
+                filetypes=extensions,
+                defaultextension=extensions
+        )
+        self.master.save_to_file(filename)

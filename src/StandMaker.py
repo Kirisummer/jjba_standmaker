@@ -7,8 +7,8 @@ import lxml.etree as et
 
 from AppearanceForm import AppearanceForm
 from LanguageForm import LanguageForm
-from SaveForm import SaveForm
 from StatsForm import StatsForm
+from SaveButton import SaveButton
 
 
 class StandMaker(tk.Tk):
@@ -26,21 +26,22 @@ class StandMaker(tk.Tk):
         self.appearance_form = AppearanceForm(self, self.translations[language])
         self.stats_form = StatsForm(self, self.translations[language])
         self.language_form = LanguageForm(self, self.translations, language)
-        self.save_form = SaveForm(self, self.translations[language])
+        self.save_button = SaveButton(self, text=self.translations[language]['save_button'])
 
-        self.appearance_form.contour.add_observer(self.save_form.save_button)
-        self.appearance_form.poly_fill.add_observer(self.save_form.save_button)
-        self.appearance_form.poly_stroke.add_observer(self.save_form.save_button)
+        self.appearance_form.contour.add_observer(self.save_button)
+        self.appearance_form.poly_fill.add_observer(self.save_button)
+        self.appearance_form.poly_stroke.add_observer(self.save_button)
         
         self.stats_form.pack(side=tk.LEFT)
         self.language_form.pack(fill='both', expand=True)
         self.appearance_form.pack(fill='both', expand=True)
-        self.save_form.pack(fill='both', expand=True)
+        self.save_button.pack(fill='both', expand=True)
 
     def translate_app(self, lang):
         self.title(self.translations[lang]['window_title'])
-        for form in ('appearance', 'stats', 'language', 'save'):
+        for form in ('appearance', 'stats', 'language'):
             getattr(self, f'{form}_form').translate(self.translations[lang])
+        self.save_button.config(text=self.translations[lang]['save_button'])
 
     def save_to_file(self, filename):
         # Calculate the points of the stat polygon

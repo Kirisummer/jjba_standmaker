@@ -13,9 +13,7 @@
 		"stat_persistence": "Стойкость",
 		"stat_precision": "Точность",
 		"stat_development": "Обучаемость",
-		"save_label": "Сохранение",
-		"save_save_button": "Сохранить",
-		"save_browse_button": "Обзор...",
+		"save_button": "Сохранить как...",
 		"lang_label": "Язык",
 		"lang_flag": "R0lGODlhGAASAPIGAP8AAOEAHh4A4QAA/x4e/+Hh/////wAAACH5BAAAAAAALAAAAAAYABIAAAM2aLrc/jDKSau9JevNuyZgKI5kOJxoqq5s675wLKtCbd94bgd87//AHmBILBqPyKRyyWw6n9AEADs="
 	},
@@ -33,9 +31,7 @@
 		"stat_persistence": "Persistence",
 		"stat_precision": "Precision",
 		"stat_development": "Development",
-		"save_label": "Saving",
-		"save_save_button": "Save",
-		"save_browse_button": "Browse...",
+		"save_button": "Save as...",
 		"lang_label": "Language",
 		"lang_flag": "R0lGODlhGAAMAPYAAAAdZgAeZwAfaAEhaQIiagIkbAMlbAMmbR49fB49fSA/fiJAfyJBf8gQLskWM8oYNcoZNssZNsoaN8waNtxabtxbbsVddsVedsZfd8dfd9Rbccdged5oe99rfd9sfuBsfuBtfyJCgCJDgi5EgC5FgS9KhC9KhTBHgjFMhjdNhjhSilBml1Fqm4RmjIVnjYZojY5rjo9rjplyk8t2i8t2jNpyheFwgeN9jaaGo6OeuueXpNCmt9KouNKoudKpudOpudWqutWuveumseumsuymse6rte2vufG3v5KjwZOjwpSiwZSjwZ2rx6m3z6q60t+2wt+3w+C3w++6wuy7xPG3wPG4wPG5wvG6wvK6wrTD2O3AyfPEy/LHzvXJz/bK0PnZ3vna3uPe5+Pf5+Te5+Xf5+bs8+fs8/Xt8ffz9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAYAAwAAAf1gBRFZ00qBAGHCj4TEz4KiAEFKTIaHF0wGyBUZEkoiUCMjpEkLxseVWFMBSQtFx1HZEolCzuMQCIMpR5HYUglBAoJIis4NTdfZU5RjFE5MzZVaFksCwmKPj47QVNCRltdOg4OOlVEUlxaQDvYi4yMEPAPDw4NDQ7v8BDu+/j6EPT2JjzIx4/dDiBauEghUiXcuC5bjAiREmQdtmALWGRBU8XGjBxR7kVxYubLjRo4VoiwRqAEkjBHQGxowUDED0Y/GJxAQubIhwstSBhgEqYKiAsvThgIoABUo0cEULyMuQFGFw4aZKQ4gAjYzaeQCKhocqYIhUAAOw=="
 	}
