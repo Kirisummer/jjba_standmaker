@@ -1,4 +1,4 @@
-from src.StandMaker import StandMaker
+from StandMaker import StandMaker
 
 
 if __name__ == '__main__':
