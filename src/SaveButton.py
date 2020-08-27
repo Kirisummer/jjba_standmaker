@@ -14,7 +14,7 @@ class SaveButton(tk.Button):
     def check_valid(self, notifier):
         """
         if all of notifiers are valid then button activates
-        :param notifier: must have valid fiel
+        :param notifier: must have valid field
         """
         self.notifiers[notifier] = notifier.valid
         
