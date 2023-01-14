@@ -1,22 +1,4 @@
 {
-	"ru": {
-		"window_title": "Создатель стандов",
-		"appearance_label": "Внешний вид",
-		"appearance_contour": "Цвет контуров",
-		"appearance_poly_fill": "Цвет многоугольника",
-		"appearance_poly_stroke": "Контур многоугольника",
-		"appearance_poly_opacity": "Прозрачность многоугольника",
-		"stat_label": "Характеристики",
-		"stat_power": "Сила",
-		"stat_speed": "Скорость",
-		"stat_range": "Дальность",
-		"stat_persistence": "Стойкость",
-		"stat_precision": "Точность",
-		"stat_development": "Обучаемость",
-		"save_button": "Сохранить как...",
-		"lang_label": "Язык",
-		"lang_flag": "R0lGODlhGAASAPIGAP8AAOEAHh4A4QAA/x4e/+Hh/////wAAACH5BAAAAAAALAAAAAAYABIAAAM2aLrc/jDKSau9JevNuyZgKI5kOJxoqq5s675wLKtCbd94bgd87//AHmBILBqPyKRyyWw6n9AEADs="
-	},
 	"en": {
 		"window_title": "Stand maker",
 		"appearance_label": "Appearance",
