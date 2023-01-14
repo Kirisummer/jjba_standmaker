@@ -27,7 +27,7 @@ and write a new one. You can also change stat polygon's opacity.
 
 ### Select language
 You can select your language by clicking a button with a flag.
-Currently available languages: Russian (default), English
+Currently available languages: English
 
 ![Language selection screenshot](readme_images/language.png)
 
