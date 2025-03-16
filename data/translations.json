@@ -5,7 +5,7 @@
 		"appearance_contour": "Contour color",
 		"appearance_poly_fill": "Polygon fill",
 		"appearance_poly_stroke": "Polygon stroke",
-		"appearance_poly_opacity": "Polygon poly_opacity",
+		"appearance_poly_opacity": "Polygon opacity",
 		"stat_label": "Stats",
 		"stat_power": "Power",
 		"stat_speed": "Speed",
@@ -16,5 +16,24 @@
 		"save_button": "Save as...",
 		"lang_label": "Language",
 		"lang_flag": "R0lGODlhGAAMAPYAAAAdZgAeZwAfaAEhaQIiagIkbAMlbAMmbR49fB49fSA/fiJAfyJBf8gQLskWM8oYNcoZNssZNsoaN8waNtxabtxbbsVddsVedsZfd8dfd9Rbccdged5oe99rfd9sfuBsfuBtfyJCgCJDgi5EgC5FgS9KhC9KhTBHgjFMhjdNhjhSilBml1Fqm4RmjIVnjYZojY5rjo9rjplyk8t2i8t2jNpyheFwgeN9jaaGo6OeuueXpNCmt9KouNKoudKpudOpudWqutWuveumseumsuymse6rte2vufG3v5KjwZOjwpSiwZSjwZ2rx6m3z6q60t+2wt+3w+C3w++6wuy7xPG3wPG4wPG5wvG6wvK6wrTD2O3AyfPEy/LHzvXJz/bK0PnZ3vna3uPe5+Pf5+Te5+Xf5+bs8+fs8/Xt8ffz9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAYAAwAAAf1gBRFZ00qBAGHCj4TEz4KiAEFKTIaHF0wGyBUZEkoiUCMjpEkLxseVWFMBSQtFx1HZEolCzuMQCIMpR5HYUglBAoJIis4NTdfZU5RjFE5MzZVaFksCwmKPj47QVNCRltdOg4OOlVEUlxaQDvYi4yMEPAPDw4NDQ7v8BDu+/j6EPT2JjzIx4/dDiBauEghUiXcuC5bjAiREmQdtmALWGRBU8XGjBxR7kVxYubLjRo4VoiwRqAEkjBHQGxowUDED0Y/GJxAQubIhwstSBhgEqYKiAsvThgIoABUo0cEULyMuQFGFw4aZKQ4gAjYzaeQCKhocqYIhUAAOw=="
-	}
+	},
+
+    "uk": {
+        "window_title": "Редактор стандів",
+        "appearance_label": "Вигляд",
+		"appearance_contour": "Колір рамки",
+		"appearance_poly_fill": "Заливка",
+		"appearance_poly_stroke": "Контур",
+		"appearance_poly_opacity": "Прозорість",
+		"stat_label": "Характеристики",
+		"stat_power": "Потужність",
+		"stat_speed": "Швидкість",
+		"stat_range": "Радіус дії",
+		"stat_persistence": "Стійкість",
+		"stat_precision": "Точність",
+		"stat_development": "Розвиток",
+		"save_button": "Зберегти як...",
+		"lang_label": "Мова",
+		"lang_flag": "iVBORw0KGgoAAAANSUhEUgAAACMAAAAYBAMAAACCSlkEAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAD1BMVEWZo0oAV7dVgnr/1wD///8F/qXxAAAAAXRSTlOOSuZ2QQAAAAFiS0dEBI9o2VEAAAAHdElNRQfoCRYXBye9g88kAAAAHElEQVQY02MQRAcCDENbSAkdKDAYowODIS6ECQAxqTbPJXbZaQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0wOS0yMlQyMzowNzozOSswMDowMHiNLKEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMDktMjJUMjM6MDc6MzkrMDA6MDAJ0JQdAAAAAElFTkSuQmCC"
+    }
 }
